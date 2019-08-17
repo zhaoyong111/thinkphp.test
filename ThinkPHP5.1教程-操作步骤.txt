@@ -1,0 +1,74 @@
+二、开发环境配置
+1、安装vs code编辑器
+2、安装Git
+    git --version
+
+3、安装宝塔面板
+    配置PHP 
+        php -v
+    配置composer 
+        composer --version
+    配置composer包镜像地址
+        composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+
+4、安装chrome浏览器
+
+5、创建应用
+    安装thinkphp
+        composer create-project topthink/think .
+
+    配置伪静态
+        if (!-e $request_filename){
+            rewrite  ^(.*)$  /index.php?s=$1  last;   break;
+        }
+
+6、Git操作
+    
+    Git 全局设置:    
+    git config --global user.name "赵勇"
+    git config --global user.email "zhaoyong@gmail.com"
+
+    创建 git 仓库: 
+    mkdir wap // 项目在本地的路径
+    cd wap
+    git init 
+     
+    //添加文件
+    touch README.md 
+    git add README.md 
+    git commit -m "first commit" 
+
+    //将项目添加到远程仓库
+    git remote add origin https://git.oschina.net/name/package.git  // 远程仓库地址
+    git push -u origin master
+
+    已有项目添加到远程仓库： 
+    cd existing_git_repo
+    git remote add origin https://git.oschina.net/name/package.git
+
+    在 vs 中每次更新代码都会要输入账号密码，可以配置一下让 GIT 记住密码账号：
+    git config --global credential.helper store   //在Git Bash输入这个命令就可以了
+
+    已有项目clone到本地：
+    cd 代码根目录
+    git clone https://github.com/zhaoyong111/ThinkPHPtest.git
+    
+
+    基本设置
+        vscode初始化版本快捷键 Ctrl+Shift+G 
+        按下Ctrl+Shift+P 键入git
+    线下与线上连接
+        打开vscode终端键入
+        git config --global user.name "赵勇"
+        git config --global user.email "zhaoyong@gmail.com"
+        git remote add github https://github.com/zhaoyong111/thinkphp.test
+        按下Ctrl+Shift+G, 点击顶部栏“源代码管理"source control 文字最右边的按钮，
+        选择”全部提交“，键入提交内容，然后再次点击这个按钮，选择“推送到”push to,选择弹出框
+        下面的远程地址。
+        
+三、构建页面
+1、think命令参考
+    https://www.kancloud.cn/manual/thinkphp5_1/354138
+
+2、提交代码
+    别忘了 Git 这个工具,按下 Ctrl+Shift+G,键入更新的消息之后点击提交,并在多选栏中选择 推送到,进入 GitHub 查看线上代码是否同步
