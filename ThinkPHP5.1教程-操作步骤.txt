@@ -51,7 +51,7 @@
 
     已有项目clone到本地：
     cd 代码根目录
-    git clone https://github.com/zhaoyong111/ThinkPHPtest.git
+    git clone https://github.com/zhaoyong111/thinkphp.test
     
 
     基本设置
@@ -72,3 +72,36 @@
 
 2、提交代码
     别忘了 Git 这个工具,按下 Ctrl+Shift+G,键入更新的消息之后点击提交,并在多选栏中选择 推送到,进入 GitHub 查看线上代码是否同步
+
+四、优化页面
+1、blade模板说明
+    https://learnku.com/docs/laravel/5.7/blade/2265
+
+2、安装blade模板
+    进入网站根目录，运行以下命令
+    composer require luoyy/think-blabe 
+
+    进入config/template替换return里的内容如下：
+    // 模板引擎类型
+    'type' => 'Blade',
+    // 视图基础目录(集中式)
+    'view_base' => '',
+    // 模板起始路径
+    'view_path' => '',
+    // 模板文件名分隔符
+    'view_depr' => DIRECTORY_SEPARATOR,
+    // 模板文件后缀
+    'view_suffix' => 'blade.php',
+    'cache' => [
+        'cache_subdir' => false,
+        'prefix' => '',
+    ],
+    'tpl_replace_string' => [],
+
+3、用户注册页面
+    生成控制器
+    请按下 Ctrl+Shift+` 并切换到终端
+    使用 Think 命令来生成控制器:
+    // 默认生成 资源控制器
+    php think make:controller user/Auth
+    
